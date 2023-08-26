@@ -1,13 +1,62 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: open sans;
+  color: #555;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  padding: 1rem;
+}
+
+.menu {
+  flex: 1;
+}
+
+.details {
+  flex: 1.5;
+}
+
+.tasklist {
+  flex: 2;
+  padding: 0 1rem;
+}
+
+.menu,
+.details {
+  background-color: hsl(0, 0%, 97%);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.task {
+  display: flex;
+  padding: 1rem;
+  border-bottom: 1px #eee solid;
+}
+
+.task:hover {
+  background-color: #eee;
+}
+
+.task input[type=checkbox] {
+  margin-right: 1rem;
+}
+
+.task p {
+  flex: 1;
+}
+
+.task button {
+  display: none;
+}
+
+.task:hover button {
+  display: inline;
 }

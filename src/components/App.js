@@ -4,7 +4,7 @@ import TaskList from "./TaskList";
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Menu />
       <TaskList />
       <Detail />
