@@ -1,11 +1,23 @@
 import React from "react";
 
-export default function Task({ task }) {
+export default function Task({ task, setTaskList }) {
+  function toggleIsDone() {
+    setTaskList((curr) =>
+      curr.map((currTask) =>
+        task === currTask ? { ...currTask, isDone: !currTask.isDone } : currTask
+      )
+    );
+  }
+
+  function deleteTask() {
+    setTaskList((curr) => curr.filter((currTask) => task !== currTask));
+  }
+
   return (
-    <div className="task">
-      <input type="checkbox" checked={task.isDone} />
+    <li className={`task ${task.isDone ? "done" : ""}`}>
+      <input type="checkbox" checked={task.isDone} onChange={toggleIsDone} />
       <p>{task.name}</p>
-      <button>Delete</button>
-    </div>
+      <button onClick={deleteTask}>Delete</button>
+    </li>
   );
 }
